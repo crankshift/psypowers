@@ -13,22 +13,31 @@ User-facing install instructions live in the root [`README.md`](./README.md). Th
 ```
 psypowers/
 ├── README.md                       # user-facing — install guide
-├── CLAUDE.md                       # this file — contributor context
+├── CLAUDE.md                       # this file — Claude Code contributor context
+├── AGENTS.md                       # Codex contributor context (mirrors CLAUDE.md for Codex)
 ├── CHANGELOG.md                    # monorepo-level structural log
 ├── .version-bump.json              # maps versioned fields in plugin/marketplace manifests
 ├── LICENSE                         # MIT
 ├── .claude-plugin/
-│   └── marketplace.json            # marketplace catalog ("psypowers"); lists psy plugin
+│   └── marketplace.json            # Claude Code marketplace catalog ("psypowers")
+├── .agents/
+│   └── plugins/
+│       └── marketplace.json        # Codex marketplace catalog (psy)
 ├── scripts/
-│   └── release.sh                  # release helper (bump, prepare, publish)
+│   ├── release.sh                  # release helper (bump, prepare, publish)
+│   ├── convert-agents-to-codex.py  # generates .codex/agents/*.toml from Claude agents/*.md
+│   └── validate-codex-agents.py    # validates generated Codex agent TOML files
 ├── plugins/
 │   └── psy/                        # plugin "psy" — psychological consultations
 │       ├── README.md               # user-facing
-│       ├── CLAUDE.md               # contributor context
+│       ├── CLAUDE.md               # Claude Code contributor context
+│       ├── AGENTS.md               # Codex contributor context
 │       ├── CHANGELOG.md            # plugin-level change log
-│       ├── .claude-plugin/plugin.json
-│       ├── agents/
-│       └── skills/
+│       ├── .claude-plugin/plugin.json  # Claude Code manifest; name: "psy"
+│       ├── .codex-plugin/plugin.json   # Codex manifest; name: "psy"
+│       ├── .codex/agents/*.toml    # generated Codex custom-agent shims (from agents/*.md)
+│       ├── agents/                 # source agent definitions (Claude + Codex source of truth)
+│       └── skills/                 # skill definitions (shared by Claude Code and Codex)
 └── site/                           # public landing page (static Astro site, not a plugin)
 ```
 
