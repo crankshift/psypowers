@@ -120,7 +120,7 @@ python3 scripts/validate-codex-agents.py
 
 ## Contributing
 
-See [`CLAUDE.md`](./CLAUDE.md) for contributor context, editorial rules, and the full repository layout.
+See [`CLAUDE.md`](./CLAUDE.md) for Claude Code contributor context and [`AGENTS.md`](./AGENTS.md) for Codex contributor context. Both cover editorial rules, the full repository layout, and the agent conversion workflow.
 
 ### Releasing a new version
 
