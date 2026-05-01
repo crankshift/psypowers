@@ -116,3 +116,7 @@ This repository also ships Codex plugin metadata. Keep Claude and Codex surfaces
 - Claude contributor instructions live in `CLAUDE.md`; Codex contributor instructions live in `AGENTS.md`.
 - Claude and Codex both use the plugin ID `psy`.
 - When adding an agent, skill, or public install instruction, update README, CLAUDE.md, AGENTS.md, and both manifest families as applicable.
+- Codex custom-agent files live in `plugins/*/.codex/agents/*.toml` and are generated from Claude `agents/*.md` files.
+- After changing any agent frontmatter/body, run `python3 scripts/convert-agents-to-codex.py` and `python3 scripts/validate-codex-agents.py`.
+- Do not hand-edit generated Codex agent TOML unless you also update the converter; Claude agent files remain the source of truth.
+- Current Codex plugin manifests do not declare agents directly, so `.codex/agents/` is the compatibility/import layer.

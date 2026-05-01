@@ -1,6 +1,6 @@
 {
   "name": "psy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Psypowers — Codex support for psychological consultation workflows. Codex and Claude Code both use the psy plugin ID.",
   "author": {
     "name": "crankshift"

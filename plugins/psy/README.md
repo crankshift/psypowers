@@ -32,6 +32,9 @@ codex plugin marketplace add .
 
 After adding the marketplace, enable `psy` in the Codex plugin UI / marketplace flow. Codex reads instructions from `AGENTS.md`; Claude Code reads `CLAUDE.md`.
 
+Codex custom-agent files are included in `.codex/agents/`. They are generated from `agents/*.md`, so update the Markdown source first and run the repo-level converter/validator before release.
+
+
 ## Agents
 
 Subagents handle complex clinical workflows. Use them by name with the `psy:` prefix.
