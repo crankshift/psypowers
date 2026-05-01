@@ -80,6 +80,22 @@ claude --plugin-dir ./plugins/psy
 - **Drafts, not clinical advice.** Everything agents produce is a working draft for a qualified psychologist to review and adapt. Final clinical responsibility is always human.
 - **ICD-11 fetch-first.** Diagnostic criteria are fetched from `icd.who.int` before falling back to embedded references.
 
+## Contributing
+
+See [`CLAUDE.md`](./CLAUDE.md) for contributor context, editorial rules, and the full repository layout.
+
+### Releasing a new version
+
+```bash
+# Prepare: bump versions, create branch, open PR
+./scripts/release.sh prepare psy 0.2.0
+
+# After PR merges: tag and publish GitHub Release
+./scripts/release.sh publish psy 0.2.0
+```
+
+See [`CLAUDE.md` — Release flow](./CLAUDE.md#release-flow) for details.
+
 ## Disclaimer
 
 `psypowers` is a tooling project whose sole purpose is to **assist professional psychologists with clinical documentation and practice support**. It doesn't replace a clinician, and running an agent is not a therapy session.

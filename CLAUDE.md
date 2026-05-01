@@ -19,6 +19,8 @@ psypowers/
 ├── LICENSE                         # MIT
 ├── .claude-plugin/
 │   └── marketplace.json            # marketplace catalog ("psypowers"); lists psy plugin
+├── scripts/
+│   └── release.sh                  # release helper (bump, prepare, publish)
 ├── plugins/
 │   └── psy/                        # plugin "psy" — psychological consultations
 │       ├── README.md               # user-facing
@@ -77,9 +79,30 @@ The `cases/` directory is created by agents on first use. It lives in the user's
 
 ## Release flow
 
-1. Bump version in two files listed in `.version-bump.json`: `plugins/psy/.claude-plugin/plugin.json:version` and `.claude-plugin/marketplace.json:plugins[0].version`.
-2. Add a new section in `plugins/psy/CHANGELOG.md`.
-3. Open a PR, merge.
-4. Tag the merge commit: `git tag -a psy/vX.Y.Z <sha> -m "..."` + `git push origin psy/vX.Y.Z`.
-5. Publish a GitHub Release with the CHANGELOG excerpt.
-6. Users update: `/plugin marketplace update psypowers` + `/reload-plugins`.
+All release steps are automated by `scripts/release.sh`. Requirements: `bash`, `git`, `gh` (authenticated), `jq`, `awk`, `claude` CLI.
+
+### Quick reference
+
+```bash
+# 1. Prepare a release (bumps versions, creates branch, opens PR)
+./scripts/release.sh prepare psy 0.2.0
+
+# 2. After PR merges — tag and publish GitHub Release
+./scripts/release.sh publish psy 0.2.0
+```
+
+### Step-by-step
+
+1. **`./scripts/release.sh prepare psy <version>`** — from a clean `main`, creates branch `release-psy-v<version>`, bumps version in `plugins/psy/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`, validates with `claude plugin validate`, prompts you to edit `plugins/psy/CHANGELOG.md`, commits, pushes, opens a PR.
+2. **Review and merge the PR** on GitHub.
+3. **`./scripts/release.sh publish psy <version>`** — pulls `main`, tags the merge commit as `psy/v<version>`, pushes the tag, creates a GitHub Release with the CHANGELOG excerpt.
+4. **Users update:** `/plugin marketplace update psypowers` + `/reload-plugins`.
+
+### Individual commands
+
+| Command | What it does |
+|---|---|
+| `bump psy <version>` | Update version in plugin.json + marketplace.json, validate |
+| `bump-marketplace <version>` | Update marketplace metadata.version only (catalog-shape changes) |
+| `prepare psy <version>` | Full PR flow: branch → bump → changelog → commit → push → PR |
+| `publish psy <version>` | Post-merge: tag → push tag → GitHub Release |
