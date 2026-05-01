@@ -1,0 +1,52 @@
+{
+  "name": "psy",
+  "version": "0.1.1",
+  "description": "Psypowers — Codex support for psychological consultation workflows. Codex and Claude Code both use the psy plugin ID.",
+  "author": {
+    "name": "crankshift"
+  },
+  "homepage": "https://github.com/crankshift/psypowers",
+  "repository": "https://github.com/crankshift/psypowers",
+  "license": "MIT",
+  "keywords": [
+    "psychology",
+    "therapy",
+    "mental-health",
+    "consultation",
+    "diagnosis",
+    "icd-11",
+    "cbt",
+    "dbt",
+    "act",
+    "mindfulness",
+    "somatic",
+    "emdr",
+    "progress-tracking",
+    "session-notes",
+    "therapeutic-practices",
+    "assessment-scales"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Psypowers",
+    "shortDescription": "Psychological consultation support workflows",
+    "longDescription": "Psypowers provides skills and agent prompts for professional psychology support: intake, ICD-11 diagnosis formulation, session notes, treatment planning, progress monitoring, evidence-based practices, and crisis-assessment drafts.",
+    "developerName": "crankshift",
+    "category": "Health",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/crankshift/psypowers",
+    "privacyPolicyURL": "https://github.com/crankshift",
+    "termsOfServiceURL": "https://github.com/crankshift",
+    "defaultPrompt": [
+      "Structure an intake interview.",
+      "Draft a clinical session note.",
+      "Create a crisis safety planning draft."
+    ],
+    "brandColor": "#7C3AED",
+    "screenshots": []
+  }
+}

@@ -1,6 +1,6 @@
 # psypowers — monorepo
 
-Monorepo hosting a psychological consultation plugin for **Claude Code**. One marketplace (`psypowers`) hosts the `psy` plugin which provides subagents and skills for clinical psychology practice support.
+Monorepo hosting a psychological consultation plugin for **Claude Code and Codex**. One marketplace (`psypowers`) hosts the `psy` plugin which provides subagents and skills for clinical psychology practice support.
 
 | Plugin | Command prefix | Documentation |
 |---|---|---|
@@ -106,3 +106,13 @@ All release steps are automated by `scripts/release.sh`. Requirements: `bash`, `
 | `bump-marketplace <version>` | Update marketplace metadata.version only (catalog-shape changes) |
 | `prepare psy <version>` | Full PR flow: branch → bump → changelog → commit → push → PR |
 | `publish psy <version>` | Post-merge: tag → push tag → GitHub Release |
+
+## Codex support
+
+This repository also ships Codex plugin metadata. Keep Claude and Codex surfaces in sync when changing plugin structure.
+
+- Claude marketplace: `.claude-plugin/marketplace.json`; Codex marketplace: `.agents/plugins/marketplace.json`.
+- Claude plugin manifest stays in `plugins/psy/.claude-plugin/plugin.json`; Codex plugin manifest stays in `plugins/psy/.codex-plugin/plugin.json`.
+- Claude contributor instructions live in `CLAUDE.md`; Codex contributor instructions live in `AGENTS.md`.
+- Claude and Codex both use the plugin ID `psy`.
+- When adding an agent, skill, or public install instruction, update README, CLAUDE.md, AGENTS.md, and both manifest families as applicable.

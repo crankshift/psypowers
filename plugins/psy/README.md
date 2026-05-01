@@ -1,6 +1,6 @@
 # psy — Psychological Consultation Plugin
 
-A Claude Code plugin for professional psychologists — structured intake interviews, ICD-11 diagnosis formulation, session documentation, progress tracking, and evidence-based therapeutic practices.
+A Claude Code and Codex plugin for professional psychologists — structured intake interviews, ICD-11 diagnosis formulation, session documentation, progress tracking, and evidence-based therapeutic practices.
 
 ## Language support
 
@@ -12,6 +12,25 @@ The plugin uses a **dual-layer language model**:
 On first use, any agent will ask: *"What language should I use for clinical documents and session notes?"* Your choice is saved to `cases/.config.md` and used by all agents automatically. You can change it at any time.
 
 Clinical terms (ICD-11 codes, scale names like PHQ-9, technique names like "cognitive restructuring") stay in English with a local-language explanation on first use — so you can reference standard literature regardless of output language.
+
+## Install in Codex
+
+Codex plugin ID: `psy`. Claude Code plugin ID: `psy`.
+
+From the GitHub marketplace:
+
+```bash
+codex plugin marketplace add crankshift/psypowers
+```
+
+From a local checkout:
+
+```bash
+cd /path/to/psypowers
+codex plugin marketplace add .
+```
+
+After adding the marketplace, enable `psy` in the Codex plugin UI / marketplace flow. Codex reads instructions from `AGENTS.md`; Claude Code reads `CLAUDE.md`.
 
 ## Agents
 

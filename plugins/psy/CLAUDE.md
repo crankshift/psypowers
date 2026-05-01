@@ -56,3 +56,7 @@ All plugin outputs are **working drafts for a qualified psychologist** to review
 ## Crisis safety
 
 The `crisis-assessor` agent and `crisis-intervention` skill always recommend professional escalation for high or imminent risk. The plugin never suggests managing acute crises via AI alone. Every crisis-related output includes a disclaimer that professional judgment and local emergency protocols take precedence.
+
+## Codex support
+
+This plugin also has Codex support. Keep `AGENTS.md` and `.codex-plugin/plugin.json` in sync with this Claude-facing file and `.claude-plugin/plugin.json` when user-visible behavior changes. Claude Code continues to use the existing Claude plugin ID; Codex may use a collision-safe ID documented in `AGENTS.md`.

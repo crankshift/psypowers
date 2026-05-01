@@ -1,0 +1,20 @@
+{
+  "name": "psypowers",
+  "interface": {
+    "displayName": "Psypowers"
+  },
+  "plugins": [
+    {
+      "name": "psy",
+      "source": {
+        "source": "local",
+        "path": "./plugins/psy"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Health"
+    }
+  ]
+}
