@@ -1,0 +1,45 @@
+{
+  "name": "psypowers",
+  "owner": {
+    "name": "crankshift"
+  },
+  "metadata": {
+    "description": "Psypowers — a Claude Code plugin for psychological consultations: intake, diagnosis (ICD-11), session tracking, progress monitoring, and evidence-based therapeutic practices.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "psy",
+      "source": "./plugins/psy",
+      "description": "Psychological consultation toolkit — intake, diagnosis (ICD-11), session tracking, progress monitoring, and evidence-based therapeutic practices across CBT, DBT, ACT, mindfulness, somatic, art therapy, EMDR, psychodynamic, and positive psychology modalities.",
+      "version": "0.1.0",
+      "author": {
+        "name": "crankshift"
+      },
+      "license": "MIT",
+      "keywords": [
+        "psychology",
+        "therapy",
+        "mental-health",
+        "consultation",
+        "diagnosis",
+        "icd-11",
+        "cbt",
+        "dbt",
+        "act",
+        "mindfulness",
+        "progress-tracking",
+        "session-notes",
+        "therapeutic-practices"
+      ],
+      "category": "health",
+      "tags": [
+        "psychology",
+        "mental-health",
+        "therapy",
+        "clinical",
+        "consultation"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "marketplace": {
+    "files": [
+      { "path": ".claude-plugin/marketplace.json", "field": "metadata.version" }
+    ]
+  },
+  "plugins": {
+    "psy": {
+      "files": [
+        { "path": "plugins/psy/.claude-plugin/plugin.json", "field": "version" },
+        { "path": ".claude-plugin/marketplace.json", "field": "plugins.0.version" }
+      ]
+    }
+  },
+  "audit": {
+    "exclude": [
+      "CHANGELOG.md",
+      ".git",
+      ".version-bump.json",
+      "node_modules"
+    ]
+  }
+}
