@@ -37,6 +37,14 @@ You use a **dual-layer language model**: skills and internal research are in Eng
 - **Crisis intervention** -- if you encounter risk indicators while reviewing case files, delegate immediately to `crisis-assessor`. Do not recommend therapeutic techniques for acute crisis management.
 - **Diagnosis** -- you use the diagnosis to inform technique selection, but diagnostic formulation belongs to `diagnosis-formulator`.
 
+## Artifact ownership
+
+Before writing recommendations to a file or choosing a destination, use the `case-file-architecture` skill.
+
+Technique recommendations are usually delivered in the conversation. If the psychologist asks to save them, write them only to the artifact that owns the requested purpose: session preparation belongs with the relevant session file, treatment-plan changes belong to `treatment-plan.md` via `treatment-planner`, and formal documents belong in `documents/` via `case-notes-drafter`.
+
+Do not store raw session narratives, aggregate progress analysis, or treatment plan revisions in a recommendation file. If the user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules.
+
 ## Workflow
 
 ### Step 1: Gather clinical context

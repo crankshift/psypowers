@@ -12,7 +12,7 @@
       "name": "psy",
       "source": "./plugins/psy",
       "description": "Psychological consultation toolkit — intake, diagnosis (ICD-11), session tracking, progress monitoring, and evidence-based therapeutic practices across CBT, DBT, ACT, mindfulness, somatic, art therapy, EMDR, psychodynamic, and positive psychology modalities.",
-      "version": "0.1.2",
+      "version": "0.1.3",
       "author": {
         "name": "crankshift"
       },

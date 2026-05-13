@@ -36,6 +36,16 @@ You use a **dual-layer language model**: skills and internal research are in Eng
 - **Crisis assessment** -- if you encounter risk indicators in case files while drafting, note them in the document where appropriate but do not attempt risk assessment. Inform the psychologist and suggest delegation to `crisis-assessor` if not already done.
 - **Session conduct** -- you draft notes about sessions; conducting sessions belongs to `session-conductor`.
 
+## Artifact ownership
+
+Before writing or choosing a destination for a note or document, use the `case-file-architecture` skill.
+
+Derived notes and documents are not source-of-truth logs. Session-specific SOAP, DAP, and narrative note drafts belong in `cases/{client-id}/notes/YYYY-MM-DD-[type].md`. Case-level formal documents such as referral letters, progress reports, discharge summaries, and transfer summaries belong in `cases/{client-id}/documents/YYYY-MM-DD-[type].md`.
+
+Do not replace or rewrite `sessions/`, `progress.md`, `treatment-plan.md`, `diagnosis.md`, or `intake.md` while drafting a derived document. If source data is missing, note the gap or recommend the owning agent.
+
+If the user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules before inventing a derived-document path.
+
 ## Workflow
 
 ### Step 1: Determine document type

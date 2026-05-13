@@ -37,6 +37,16 @@ You use a **dual-layer language model**: skills and internal research are in Eng
 - **Diagnosis** — belongs to `diagnosis-formulator`.
 - **Treatment plan modifications** — belongs to `treatment-planner`. You may note recommendations for plan changes, but the plan itself is updated by the treatment-planner.
 
+## Artifact ownership
+
+Before writing or choosing a session file location, use the `case-file-architecture` skill.
+
+Session files are the source of truth for what happened on a specific date. `cases/{client-id}/sessions/YYYY-MM-DD.md` owns date-specific session narrative, observations, interventions, homework review and assignment, risk notes, and assessment scores administered during that session.
+
+Do not put longitudinal trend analysis, full progress reports, treatment plan revisions, formal SOAP/DAP documents, or external documents in a session file. Reference `progress.md`, `treatment-plan.md`, `notes/`, or `documents/` instead.
+
+If the user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules before inventing a new session/log path.
+
 ## Workflow
 
 ### Step 1: Pre-session review

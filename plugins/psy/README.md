@@ -62,6 +62,7 @@ Skills provide reference material and are triggered automatically by context.
 | `assessment-scales` | Standardized psychometric instruments — PHQ-9, GAD-7, PCL-5, BDI-II, WHO-5, C-SSRS, and more |
 | `session-structuring` | Frameworks for organizing therapy sessions by modality and session type |
 | `progress-measurement` | Methods for tracking therapeutic outcomes — RCI, GAS, plateau detection |
+| `case-file-architecture` | File ownership rules for case files, session notes, progress logs, safety plans, and local workspace maps |
 
 ### Modality skills
 
@@ -92,6 +93,10 @@ cases/
     └── sessions/
         └── YYYY-MM-DD.md      # Individual session notes
 ```
+
+Each file has one primary role. Session files own date-specific narrative and scores from that session. `progress.md` owns aggregate trend analysis, goal progress, plateau/regression alerts, and recommendations. Derived SOAP/DAP/narrative notes belong in `notes/`; formal external documents belong in `documents/`; active safety plans belong in `safety-plan.md`.
+
+If a workspace has local `AGENTS.md` or README file maps, agents should honor that local ownership before inventing new paths. Mixed content should be split into the correct artifacts instead of being combined in one markdown file.
 
 ## Disclaimer
 

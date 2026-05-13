@@ -4,8 +4,9 @@
 #
 # Usage:
 #   ./scripts/release.sh bump <plugin> <version>
-#       Update the plugin's version in its plugin.json and in the
-#       marketplace entry. <plugin> is 'psy'. Validates after.
+#       Update the plugin's version in Claude/Codex plugin manifests
+#       and in the Claude marketplace entry. <plugin> is 'psy'.
+#       Validates after.
 #
 #   ./scripts/release.sh bump-marketplace <version>
 #       Update marketplace.json metadata.version only. Used on
@@ -47,6 +48,13 @@ check_tools() {
 plugin_json_path() {
   case "$1" in
     psy) echo "$REPO_ROOT/plugins/psy/.claude-plugin/plugin.json" ;;
+    *)   die "unknown plugin: $1 (expected 'psy')" ;;
+  esac
+}
+
+plugin_codex_json_path() {
+  case "$1" in
+    psy) echo "$REPO_ROOT/plugins/psy/.codex-plugin/plugin.json" ;;
     *)   die "unknown plugin: $1 (expected 'psy')" ;;
   esac
 }
@@ -93,12 +101,14 @@ cmd_bump() {
   local plugin="${1:?usage: bump <plugin> <version>}"
   local version="${2:?usage: bump <plugin> <version>}"
 
-  local plugin_json idx
+  local plugin_json codex_plugin_json idx
   plugin_json=$(plugin_json_path "$plugin")
+  codex_plugin_json=$(plugin_codex_json_path "$plugin")
   idx=$(plugin_marketplace_index "$plugin")
 
   info "$plugin plugin → $version"
   set_json_field "$plugin_json" '.version' "$version"
+  set_json_field "$codex_plugin_json" '.version' "$version"
   set_json_field "$MARKETPLACE_JSON" ".plugins[$idx].version" "$version"
 
   info "validating plugin..."

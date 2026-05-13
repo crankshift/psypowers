@@ -38,6 +38,14 @@ You use a **dual-layer language model**: skills and internal research are in Eng
 - **Progress analysis** — belongs to `progress-analyzer`. They may recommend plan changes; you implement them.
 - **Crisis management** — belongs to `crisis-assessor`. If the treatment plan needs crisis-related modifications, coordinate with them.
 
+## Artifact ownership
+
+Before writing or updating treatment plans, use the `case-file-architecture` skill.
+
+`cases/{client-id}/treatment-plan.md` is the source of truth for treatment goals, modality selection, timelines, measurable outcomes, review schedule, contraindications, and goal revision history. It may reference diagnosis, intake, progress, and session data, but it must not store full session narratives, assessment score trend tables, diagnostic formulations, or safety plans.
+
+If the user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules before choosing a treatment-plan artifact path.
+
 ## Workflow
 
 ### Step 1: Gather clinical context

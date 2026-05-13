@@ -1,5 +1,17 @@
 # Changelog — psy plugin
 
+## [0.1.3] — 2026-05-13
+
+### Added
+
+- Added the `case-file-architecture` utility skill to enforce one-artifact-one-role ownership for case files, session notes, progress logs, safety plans, clinical documents, and workspace-specific markdown logs.
+
+### Changed
+
+- Updated all source agents with artifact ownership guardrails so session files, progress reports, treatment plans, diagnoses, crisis documents, and derived notes do not absorb unrelated content.
+- README, `CLAUDE.md`, and `AGENTS.md` now document case-file ownership and local workspace file-map handling.
+- `release.sh` now keeps Claude and Codex plugin manifest versions in sync when bumping `psy`.
+- `plugin.json`: version 0.1.2 → 0.1.3.
 
 ## [0.1.2] — 2026-05-01
 
@@ -35,3 +47,4 @@
 - Client case file structure with markdown-based session tracking and progress monitoring.
 [0.1.1]: https://github.com/crankshift/psypowers/releases/tag/psy/v0.1.1
 [0.1.2]: https://github.com/crankshift/psypowers/releases/tag/psy/v0.1.2
+[0.1.3]: https://github.com/crankshift/psypowers/releases/tag/psy/v0.1.3

@@ -66,6 +66,8 @@ cases/
 
 The `cases/` directory is created by agents on first use. It lives in the user's working directory, not inside the plugin.
 
+Each file has one primary role. Use the `case-file-architecture` skill before writing or relocating case files, session notes, progress logs, safety plans, clinical documents, or workspace-specific markdown logs. Session files own date-specific source notes; `progress.md` owns aggregate trend analysis; derived notes and documents do not replace source files. If a user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules before inventing new paths.
+
 ## Shared editorial rules
 
 - **Evidence-based only.** All techniques must have published clinical evidence; cite source studies, meta-analyses, or clinical guidelines where possible.
@@ -102,7 +104,7 @@ All release steps are automated by `scripts/release.sh`. Requirements: `bash`, `
 
 ### Step-by-step
 
-1. **`./scripts/release.sh prepare psy <version>`** — from a clean `main`, creates branch `release-psy-v<version>`, bumps version in `plugins/psy/.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`, validates with `claude plugin validate`, prompts you to edit `plugins/psy/CHANGELOG.md`, commits, pushes, opens a PR.
+1. **`./scripts/release.sh prepare psy <version>`** — from a clean `main`, creates branch `release-psy-v<version>`, bumps version in both plugin manifests and `.claude-plugin/marketplace.json`, validates with `claude plugin validate`, prompts you to edit `plugins/psy/CHANGELOG.md`, commits, pushes, opens a PR.
 2. **Review and merge the PR** on GitHub.
 3. **`./scripts/release.sh publish psy <version>`** — pulls `main`, tags the merge commit as `psy/v<version>`, pushes the tag, creates a GitHub Release with the CHANGELOG excerpt.
 4. **Users update:** `/plugin marketplace update psypowers` + `/reload-plugins`.
@@ -111,7 +113,7 @@ All release steps are automated by `scripts/release.sh`. Requirements: `bash`, `
 
 | Command | What it does |
 |---|---|
-| `bump psy <version>` | Update version in plugin.json + marketplace.json, validate |
+| `bump psy <version>` | Update version in Claude/Codex plugin manifests + marketplace.json, validate |
 | `bump-marketplace <version>` | Update marketplace metadata.version only (catalog-shape changes) |
 | `prepare psy <version>` | Full PR flow: branch → bump → changelog → commit → push → PR |
 | `publish psy <version>` | Post-merge: tag → push tag → GitHub Release |

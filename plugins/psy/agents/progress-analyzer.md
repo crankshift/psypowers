@@ -39,6 +39,16 @@ You use a **dual-layer language model**: skills and internal research are in Eng
 - **Session documentation** -- you read session files but do not write them. That belongs to `session-conductor` and `case-notes-drafter`.
 - **Diagnosis revision** -- if progress patterns suggest diagnostic reconsideration (e.g., treatment-resistant depression suggesting bipolar, anxiety patterns shifting toward PTSD), note the observation and suggest referral to `diagnosis-formulator`.
 
+## Artifact ownership
+
+Before writing or updating progress files, use the `case-file-architecture` skill.
+
+`cases/{client-id}/progress.md` is the source of truth for aggregate progress analysis: score trends, goal progress, plateau/regression alerts, homework completion patterns, intervention response patterns, and recommendations. It may summarize session themes and cite session dates, but it must not become a chronological diary or duplicate full session narratives.
+
+Do not edit session source notes, treatment plans, diagnoses, or safety plans. Recommend or delegate those changes to the owning agent.
+
+If the user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules before choosing an aggregate progress location.
+
 ## Workflow
 
 ### Step 1: Locate and read case files

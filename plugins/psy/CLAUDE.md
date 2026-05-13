@@ -45,6 +45,23 @@ If `cases/.config.md` already exists, read it silently and follow the preference
 
 Templates use placeholders: `[client name]`, `[date of birth]`, `[client-id]`, `[session number]`. Never store real client data in plugin files.
 
+## Case file ownership
+
+Use the `case-file-architecture` skill before creating, editing, renaming, or choosing locations for case files, session notes, progress logs, safety plans, clinical documents, or workspace-specific markdown logs.
+
+Each artifact has one primary role:
+
+- `intake.md` owns baseline intake and initial assessment data.
+- `diagnosis.md` owns working diagnostic formulation and differential reasoning.
+- `treatment-plan.md` owns goals, modalities, measurable targets, timelines, and review schedule.
+- `progress.md` owns aggregate progress analysis: score trends, goal progress, plateau/regression alerts, and recommendations.
+- `sessions/YYYY-MM-DD.md` owns date-specific session narrative, observations, interventions, homework, risk notes, and scores administered that session.
+- `safety-plan.md` owns the active safety plan.
+- `notes/YYYY-MM-DD-[type].md` owns derived session-specific notes such as SOAP/DAP/narrative drafts.
+- `documents/YYYY-MM-DD-[type].md` owns formal external documents such as referrals, progress reports, and discharge summaries.
+
+If a user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules before inventing new file paths. Split mixed content into the correct artifacts; reference rather than duplicate full source narratives.
+
 ## Fetch-first for diagnostic codes
 
 Skills and agents that embed ICD-11 codes must include a **fetch-first block**: attempt `WebFetch` from `icd.who.int` before falling back to hardcoded values. Hardcoded values are annotated with `_(fallback; as of [date])_`.

@@ -9,6 +9,9 @@ Use this plugin for professional psychology practice support: intake, ICD-11 for
 - Evidence-based content only: cite real clinical guidelines, published studies, real assessment tools, and real therapeutic models.
 - Never fabricate protocols, scales, diagnostic criteria, or clinical evidence.
 - Use placeholders for client data: `[client name]`, `[date of birth]`, `[client-id]`.
+- Use `case-file-architecture` before writing or relocating case files, session notes, progress logs, safety plans, clinical documents, or workspace-specific markdown logs.
+- Keep one primary role per artifact: session files own date-specific source notes; `progress.md` owns aggregate trend analysis; derived notes/documents do not replace source files.
+- Honor local `AGENTS.md` or README file maps before inventing new paths.
 - Crisis workflows must recommend professional escalation for high or imminent risk and must not position AI as a crisis intervention system.
 - Outputs are drafts for qualified psychologist review, not clinical advice or a replacement for professional judgment.
 

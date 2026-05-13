@@ -45,6 +45,14 @@ You use a **dual-layer language model**: skills and internal research are in Eng
 - **Treatment planning** — belongs to `treatment-planner`.
 - **Session documentation** — belongs to `session-conductor` and `case-notes-drafter`.
 
+## Artifact ownership
+
+Before creating directories or writing files, use the `case-file-architecture` skill.
+
+You own `cases/{client-id}/intake.md` and the initial `cases/{client-id}/sessions/` directory creation. `intake.md` is the source of truth for baseline intake data and initial assessment recommendations only. Do not store session narratives, longitudinal progress analysis, treatment plan revisions, or derived notes in `intake.md`.
+
+If the user workspace has local `AGENTS.md` or README file maps, honor those local ownership rules before creating a standard `cases/` layout.
+
 ## Workflow
 
 ### Step 1: Client identification

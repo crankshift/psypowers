@@ -13,6 +13,7 @@ This repository supports both Claude Code and Codex. Claude Code remains support
 - Evidence-based content only: use real assessment tools, real therapeutic models, and published clinical sources.
 - `agents/` and `skills/` remain the source of truth for plugin behavior.
 - When adding or renaming agents or skills, update the plugin README, `CLAUDE.md`, `AGENTS.md`, Claude manifest, and Codex manifest/marketplace when the public surface changes.
+- File-writing behavior must preserve artifact ownership. Use the plugin's `case-file-architecture` skill for case files, session notes, progress logs, safety plans, clinical documents, and workspace-specific markdown logs.
 - Do not commit real client data. Use placeholders such as `[client name]`, `[date of birth]`, and `[client-id]`.
 - Crisis workflows must always defer to professional judgment, supervision, institutional protocols, and emergency services for imminent danger.
 
